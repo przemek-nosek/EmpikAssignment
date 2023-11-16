@@ -5,11 +5,13 @@ import pl.java.shared.out.client.response.GithubUserResponse;
 import pl.java.user.domain.exception.DomainException;
 import pl.java.user.domain.model.User;
 import pl.java.user.domain.ports.in.GetUserUseCase;
+import pl.java.user.domain.ports.out.UpdateUserCountPort;
 
 import static pl.java.user.domain.exception.messages.DomainErrorMessages.USER_FOLLOWERS_COUNT_IS_ZERO_CANT_DIVIDE;
 
 public record GetUserService(
-        AbstractClient client
+        AbstractClient client,
+        UpdateUserCountPort updateUserCountPort
 
 ) implements GetUserUseCase {
 
@@ -18,7 +20,9 @@ public record GetUserService(
 
     @Override
     public User getUser(String login) {
-        return toUser(client.getUserDetails(login));
+        User user = toUser(client.getUserDetails(login));
+        updateUserCountPort.update(user);
+        return user;
     }
 
     private User toUser(GithubUserResponse userDetails) {
