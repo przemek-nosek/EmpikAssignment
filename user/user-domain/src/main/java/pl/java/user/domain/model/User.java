@@ -1,7 +1,8 @@
 package pl.java.user.domain.model;
 
 import lombok.Builder;
-import lombok.Getter;
+
+import java.time.LocalDateTime;
 
 
 @Builder(toBuilder = true)
@@ -11,7 +12,7 @@ public record User(
         String name,
         String type,
         String avatarUrl,
-        String createdAt,
-        int calculations
+        LocalDateTime createdAt,
+        double calculations
 ) {
 }

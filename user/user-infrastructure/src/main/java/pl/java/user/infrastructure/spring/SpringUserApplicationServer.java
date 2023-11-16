@@ -9,7 +9,8 @@ import pl.java.shared.out.client.GithubServiceClient;
 import pl.java.user.infrastructure.spring.beans.UserBeans;
 
 @ComponentScan(basePackages = {
-        "pl.java.user.application"
+        "pl.java.user.application",
+        "pl.java.user.infrastructure"
 })
 @Import(UserBeans.class)
 @SpringBootApplication

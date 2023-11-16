@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94142ac0-2f47-410c-ab20-c477a8c59aeb" name="Changes" comment="" />
+    <list default="true" id="94142ac0-2f47-410c-ab20-c477a8c59aeb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/user/user-domain/src/main/java/pl/java/user/domain/exception/messages/DomainErrorMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/user-infrastructure/src/main/java/pl/java/user/infrastructure/spring/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/user-infrastructure/src/main/java/pl/java/user/infrastructure/spring/exception/message/ErrorMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/0355ac2a434af4023018219ad84925749fcad0f4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09a9ac2a2953cd9f1ac4792da88ce7bb779f4eb0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0fb6db29da5873bc954f794de2b12c696c0f8a5f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/1366b66d5fdcb8136c007315e00473888fb98de3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6aad88d1bc501f2bc677a0080765194d86a3bf63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/9005aeddf9f063424d782e5a7d894abdda711e2a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c6a1f6a717d32dfcd31c0000d1a6122aa76c348a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c6a1f6a717d32dfcd31c0000d1a6122aa76c348a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c82b7ee2e5476f003a14126a7876d885175a8c29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/cebda5006b41ebc350695521fcdf2eb06476c6ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d29041f57b01942e78ab165fb8eddad30c03ad21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5956d186c4264a512e84059bc6eaf82ab6bed05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e34c4f13a19014866be170e896454003d6af88f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e61bcc8c90de283e2ffb1ec73d94cc7ada533ce0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f191323be7bec3f17d8a0af08099dde5bc4115d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/3/0355ac2a434af4023018219ad84925749fcad0f4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/9/09a9ac2a2953cd9f1ac4792da88ce7bb779f4eb0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0fb6db29da5873bc954f794de2b12c696c0f8a5f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/3/1366b66d5fdcb8136c007315e00473888fb98de3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/a/6aad88d1bc501f2bc677a0080765194d86a3bf63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/0/9005aeddf9f063424d782e5a7d894abdda711e2a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/8/c82b7ee2e5476f003a14126a7876d885175a8c29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/e/cebda5006b41ebc350695521fcdf2eb06476c6ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d29041f57b01942e78ab165fb8eddad30c03ad21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d5956d186c4264a512e84059bc6eaf82ab6bed05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/3/e34c4f13a19014866be170e896454003d6af88f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/6/e61bcc8c90de283e2ffb1ec73d94cc7ada533ce0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/1/f191323be7bec3f17d8a0af08099dde5bc4115d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/pl/java/shared/out/client/response/GithubUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/pl/java/shared/out/client/response/GithubUserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user-application/src/main/java/pl/java/user/application/in/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/user-application/src/main/java/pl/java/user/application/in/response/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user-domain/src/main/java/pl/java/user/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/user-domain/src/main/java/pl/java/user/domain/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user-domain/src/main/java/pl/java/user/domain/services/GetUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/user-domain/src/main/java/pl/java/user/domain/services/GetUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user-infrastructure/src/main/java/pl/java/user/infrastructure/spring/SpringUserApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/user-infrastructure/src/main/java/pl/java/user/infrastructure/spring/SpringUserApplicationServer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,38 +52,43 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2YFXJetwh4zRd1hTfl1LNkoFk6P" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "last_opened_file_path": "C:/Users/Pszemekdzemek/Desktop/java/rekrut/Empik/ddd/user-service/user/user-application/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pszemekdzemek/Desktop/java/rekrut/Empik/ddd/user-service/user/user-application/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Pszemekdzemek\Desktop\java\rekrut\Empik\ddd\user-service\user\user-application\src\main\resources" />
@@ -95,22 +139,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700122231813</updated>
-      <workItem from="1700122232935" duration="8359000" />
+      <workItem from="1700122232935" duration="11478000" />
+      <workItem from="1700136623140" duration="301000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/user/user-domain/src/main/java/pl/java/user/domain/services/GetUserService.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
