@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import pl.java.shared.out.client.AbstractClient;
 import pl.java.user.domain.ports.in.GetUserUseCase;
 import pl.java.user.domain.ports.out.UserCallCounterPort;
+
 import pl.java.user.domain.services.GetUserService;
 
 @Configuration

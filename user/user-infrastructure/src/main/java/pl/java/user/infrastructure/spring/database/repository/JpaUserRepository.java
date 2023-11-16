@@ -1,5 +1,6 @@
 package pl.java.user.infrastructure.spring.database.repository;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import pl.java.user.domain.repository.UserRepository;
@@ -7,10 +8,11 @@ import pl.java.user.infrastructure.spring.database.model.UserEntity;
 
 @Repository
 @Profile("jpa")
-public record JpaUserRepository(
-        SpringDataJpaUserRepository springDataJpaUserRepository) implements UserRepository {
+@RequiredArgsConstructor
+public class JpaUserRepository implements UserRepository {
 
     private static final int ZERO_REQUEST_COUNT = 0;
+    private final SpringDataJpaUserRepository springDataJpaUserRepository;
 
     @Override
     public int getRequestCount(String login) {

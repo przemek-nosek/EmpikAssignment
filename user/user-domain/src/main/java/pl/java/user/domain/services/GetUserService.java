@@ -12,7 +12,6 @@ import static pl.java.user.domain.exception.messages.DomainErrorMessages.USER_FO
 public record GetUserService(
         AbstractClient client,
         UserCallCounterPort userCallCounterPort) implements GetUserUseCase {
-
     private static final int FIRST_CONSTANT = 6;
     private static final int SECOND_CONSTANT = 2;
 
