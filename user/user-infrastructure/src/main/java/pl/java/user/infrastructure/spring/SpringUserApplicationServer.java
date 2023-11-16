@@ -1,0 +1,22 @@
+package pl.java.user.infrastructure.spring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
+import pl.java.shared.out.client.GithubServiceClient;
+import pl.java.user.infrastructure.spring.beans.UserBeans;
+
+@ComponentScan(basePackages = {
+        "pl.java.user.application"
+})
+@Import(UserBeans.class)
+@SpringBootApplication
+@EnableFeignClients(clients = GithubServiceClient.class)
+public class SpringUserApplicationServer {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringUserApplicationServer.class, args);
+    }
+}

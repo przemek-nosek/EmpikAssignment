@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: additional-user-data-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/additional-user-data-service
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+  profiles:
+    active: jpa
