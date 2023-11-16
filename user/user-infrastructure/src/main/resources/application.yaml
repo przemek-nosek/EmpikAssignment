@@ -1,6 +1,6 @@
 spring:
   application:
-    name: additional-user-data-service
+    name: user-service
 
   datasource:
     url: jdbc:postgresql://localhost:5432/additional-user-data-service
@@ -15,3 +15,7 @@ spring:
           auto: update
   profiles:
     active: jpa
+
+github:
+  client:
+    url: https://api.github.com/users

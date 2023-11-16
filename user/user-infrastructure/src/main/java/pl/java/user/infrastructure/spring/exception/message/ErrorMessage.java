@@ -13,7 +13,5 @@ public record ErrorMessage(
         HttpStatus httpStatus,
         int statusCode,
         LocalDateTime timeStamp,
-        String message,
-        @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
-        Collection<String> errors) {
+        String message) {
 }
