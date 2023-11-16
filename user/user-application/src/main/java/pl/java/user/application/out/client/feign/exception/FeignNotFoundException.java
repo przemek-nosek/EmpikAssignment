@@ -1,4 +1,4 @@
-package pl.java.shared.out.client.feign.exceptions;
+package pl.java.user.application.out.client.feign.exception;
 
 import pl.java.shared.exception.NotFoundException;
 

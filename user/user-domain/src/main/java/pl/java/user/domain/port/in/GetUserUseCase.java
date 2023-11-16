@@ -1,4 +1,4 @@
-package pl.java.user.domain.ports.in;
+package pl.java.user.domain.port.in;
 
 import pl.java.user.domain.model.User;
 

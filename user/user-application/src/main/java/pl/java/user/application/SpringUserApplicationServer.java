@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
-import pl.java.shared.out.client.feign.FeignGithubServiceClient;
-import pl.java.user.application.beans.UserBeans;
+import pl.java.user.application.bean.UserBeans;
+import pl.java.user.application.out.client.feign.FeignGithubServiceClient;
 
 @ComponentScan(basePackages = {
         "pl.java.user.application",
@@ -15,7 +15,7 @@ import pl.java.user.application.beans.UserBeans;
 @Import(UserBeans.class)
 @SpringBootApplication
 @EnableFeignClients(clients = FeignGithubServiceClient.class)
-public class SpringUserApplicationServer {
+class SpringUserApplicationServer {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringUserApplicationServer.class, args);
