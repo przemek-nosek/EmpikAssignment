@@ -10,6 +10,6 @@ public record UserResponse(
         String type,
         String avatarUrl,
         String createdAt,
-        int calculations
+        double calculations
 ) {
 }
