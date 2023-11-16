@@ -1,10 +1,10 @@
-package pl.java.shared.out.client.feign;
+package pl.java.user.application.out.client.feign;
 
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import lombok.extern.slf4j.Slf4j;
-import pl.java.shared.out.client.feign.exceptions.FeignBadRequestException;
-import pl.java.shared.out.client.feign.exceptions.FeignNotFoundException;
+import pl.java.user.application.out.client.feign.exception.FeignBadRequestException;
+import pl.java.user.application.out.client.feign.exception.FeignNotFoundException;
 
 @Slf4j
 class FeignClientErrorDecoder implements ErrorDecoder {
