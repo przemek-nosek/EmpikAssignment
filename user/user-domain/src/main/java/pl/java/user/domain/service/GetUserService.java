@@ -1,5 +1,7 @@
 package pl.java.user.domain.service;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import pl.java.shared.out.client.AbstractClient;
 import pl.java.shared.out.client.response.GithubUserResponse;
 import pl.java.user.domain.exception.DomainException;
@@ -9,9 +11,11 @@ import pl.java.user.domain.port.out.UserCallCounterPort;
 
 import static pl.java.user.domain.exception.messages.DomainErrorMessages.USER_FOLLOWERS_COUNT_IS_ZERO_CANT_DIVIDE;
 
-public record GetUserService(
-        AbstractClient client,
-        UserCallCounterPort userCallCounterPort) implements GetUserUseCase {
+@RequiredArgsConstructor
+public class GetUserService implements GetUserUseCase {
+
+    private final AbstractClient client;
+    private final UserCallCounterPort userCallCounterPort;
     private static final int FIRST_CONSTANT = 6;
     private static final int SECOND_CONSTANT = 2;
 

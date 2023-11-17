@@ -8,18 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.java.user.application.in.mapper.UserOutputMapper;
 import pl.java.user.application.in.response.UserResponse;
+import pl.java.user.application.in.rest.specification.UserSpecification;
+
 import pl.java.user.domain.port.in.GetUserUseCase;
 
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-class UserController {
+class UserController implements UserSpecification {
 
     private final GetUserUseCase getUserUseCase;
     private final UserOutputMapper userOutputMapper;
 
+    @Override
     @GetMapping("/{login}")
-    ResponseEntity<UserResponse> getUser(@PathVariable String login) {
+    public ResponseEntity<UserResponse> getUser(@PathVariable String login) {
         UserResponse userResponse = userOutputMapper.toUserResponse(getUserUseCase.getUser(login));
         return ResponseEntity.ok(userResponse);
     }
