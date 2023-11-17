@@ -6,6 +6,7 @@ import pl.java.user.application.out.client.feign.exception.FeignBadRequestExcept
 import pl.java.user.application.out.client.feign.exception.FeignNotFoundException;
 
 
+
 class FeignClientErrorDecoder implements ErrorDecoder {
 
     private static final String NOT_FOUND_ERROR = "URL %s not found.";

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.java.user.application.in.mapper.UserOutputMapper;
 import pl.java.user.application.in.response.UserResponse;
 import pl.java.user.application.in.rest.specification.UserSpecification;
+
 import pl.java.user.domain.port.in.GetUserUseCase;
 
 @RestController
