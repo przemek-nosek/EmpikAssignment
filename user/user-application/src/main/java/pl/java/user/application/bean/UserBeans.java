@@ -11,7 +11,7 @@ import pl.java.user.domain.service.GetUserService;
 public class UserBeans {
 
     @Bean
-    GetUserUseCase getUserUseCase(AbstractClient abstractClient, UserCallCounterPort userCallCounterPort) {
+    public GetUserUseCase getUserUseCase(AbstractClient abstractClient, UserCallCounterPort userCallCounterPort) {
         return new GetUserService(abstractClient, userCallCounterPort);
     }
 }

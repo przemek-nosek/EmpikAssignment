@@ -10,7 +10,8 @@ import pl.java.user.application.out.client.feign.FeignGithubServiceClient;
 
 @ComponentScan(basePackages = {
         "pl.java.user.application",
-        "pl.java.user.infrastructure"
+        "pl.java.user.infrastructure",
+        "pl.java.shared"
 })
 @Import(UserBeans.class)
 @SpringBootApplication

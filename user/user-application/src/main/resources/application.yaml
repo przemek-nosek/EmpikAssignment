@@ -1,6 +1,8 @@
 spring:
   application:
     name: user-service
+  profiles:
+    active: jpa
 
   datasource:
     url: jdbc:postgresql://localhost:5432/user-service
@@ -11,8 +13,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  profiles:
-    active: jpa
 
 github:
   client:

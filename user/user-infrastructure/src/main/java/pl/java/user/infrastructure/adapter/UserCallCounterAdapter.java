@@ -14,9 +14,9 @@ public class UserCallCounterAdapter implements UserCallCounterPort {
 
     private final UserRepository userRepository;
 
-    @Override
-    @Transactional
-    public void update(User user) { //todo think about event sourcing and @Transactional
+    @Override //todo docker compose
+    //todo create database if not exist
+    public void update(User user) {
         int currentRequestCount = userRepository.getRequestCount(user.login());
         int updatedCount = currentRequestCount + 1;
         userRepository.updateRequestCount(user.login(), updatedCount);
