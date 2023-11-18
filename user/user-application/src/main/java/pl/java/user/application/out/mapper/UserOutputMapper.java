@@ -1,4 +1,4 @@
-package pl.java.user.application.in.mapper;
+package pl.java.user.application.out.mapper;
 
 import org.mapstruct.Mapper;
 import pl.java.user.application.in.response.UserResponse;
