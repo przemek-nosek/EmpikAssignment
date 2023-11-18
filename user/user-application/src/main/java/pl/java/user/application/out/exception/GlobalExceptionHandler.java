@@ -15,7 +15,6 @@ import pl.java.user.domain.exception.DomainException;
 import java.time.LocalDateTime;
 
 @RestControllerAdvice
-
 class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({DomainException.class, FeignBadRequestException.class})

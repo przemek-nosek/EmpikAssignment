@@ -12,7 +12,8 @@ import pl.java.user.domain.port.out.UserCallCounterPort;
 
 import java.time.LocalDateTime;
 
-import static org.mockito.BDDMockito.*;
+import static org.mockito.BDDMockito.anyString;
+import static org.mockito.BDDMockito.given;
 
 @ExtendWith(MockitoExtension.class)
 class GetUserServiceTest {

@@ -1,7 +1,6 @@
 package pl.java.user.domain.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import pl.java.shared.out.client.AbstractClient;
 import pl.java.shared.out.client.response.GithubUserResponse;
 import pl.java.user.domain.exception.DomainException;

@@ -2,7 +2,6 @@ package pl.java.user.infrastructure.adapter;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import pl.java.user.domain.model.User;
 import pl.java.user.domain.port.out.UserCallCounterPort;
 import pl.java.user.domain.repository.UserRepository;

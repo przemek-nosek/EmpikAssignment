@@ -10,7 +10,8 @@ import pl.java.user.domain.repository.UserRepository;
 
 import java.time.LocalDateTime;
 
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -28,9 +29,9 @@ class UserCallCounterAdapterTest {
         willDoNothing().given(userRepository).updateRequestCount(anyString(), anyInt());
 
         //when
-         userCallCounterAdapter.update(buildUser());
+        userCallCounterAdapter.update(buildUser());
 
-         //then
+        //then
         then(userRepository).should().getRequestCount(anyString());
         then(userRepository).should().updateRequestCount(anyString(), anyInt());
     }
