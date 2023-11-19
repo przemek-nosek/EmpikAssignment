@@ -33,18 +33,6 @@ public interface UserSpecification {
                                             """)
                             }
                     )),
-                    @ApiResponse(responseCode = "400", description = "User's follower count is zero and can't divide.", content = @Content(
-                            examples = {
-                                    @ExampleObject(name = "exampleBadRequestError", value = """
-                                                {
-                                                "httpStatus": "BAD_REQUEST",
-                                                "statusCode": 400,
-                                                "timeStamp": "2023-11-17T10:27:41.3982729",
-                                                "message": "User's przemek-nosek follower count is zero therefore can not divide."
-                                                }
-                                            """)
-                            }
-                    )),
                     @ApiResponse(responseCode = "404", description = "User not found in GitHub API.", content = @Content(
                             examples = {
                                     @ExampleObject(name = "exampleNotFoundError", value = """
@@ -56,7 +44,19 @@ public interface UserSpecification {
                                                 }
                                             """)
                             }
-                    ))
+                    )),
+                    @ApiResponse(responseCode = "422", description = "User's follower count is zero and can't divide.", content = @Content(
+                            examples = {
+                                    @ExampleObject(name = "exampleUnprocessable_entity", value = """
+                                                {
+                                                "httpStatus": "UNPROCESSABLE_ENTITY",
+                                                "statusCode": 422,
+                                                "timeStamp": "2023-11-17T10:27:41.3982729",
+                                                "message": "User's przemek-nosek follower count is zero therefore can not divide."
+                                                }
+                                            """)
+                            }
+                    )),
             }
     )
     ResponseEntity<UserResponse> getUser(

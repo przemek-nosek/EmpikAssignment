@@ -3,7 +3,7 @@ package pl.java.user.domain.service;
 import lombok.RequiredArgsConstructor;
 import pl.java.shared.out.client.AbstractClient;
 import pl.java.shared.out.client.response.GithubUserResponse;
-import pl.java.user.domain.exception.DomainException;
+import pl.java.user.domain.exception.ZeroFollowersException;
 import pl.java.user.domain.model.User;
 import pl.java.user.domain.port.in.GetUserUseCase;
 import pl.java.user.domain.port.out.UserCallCounterPort;
@@ -22,11 +22,12 @@ public class GetUserService implements GetUserUseCase {
     public User getUser(String login) {
         GithubUserResponse userDetails = client.getUserDetails(login);
         if (0 == userDetails.followers()) {
-            throw new DomainException(String.format(USER_FOLLOWERS_COUNT_IS_ZERO_CANT_DIVIDE.getMessage(), login));
+            userCallCounterPort.update(login);
+            throw new ZeroFollowersException(String.format(USER_FOLLOWERS_COUNT_IS_ZERO_CANT_DIVIDE.getMessage(), login));
         }
         double calculations = doCalculations(userDetails.followers(), userDetails.publicRepos());
         User user = toUser(userDetails, calculations);
-        userCallCounterPort.update(user);
+        userCallCounterPort.update(login);
         return user;
     }
 

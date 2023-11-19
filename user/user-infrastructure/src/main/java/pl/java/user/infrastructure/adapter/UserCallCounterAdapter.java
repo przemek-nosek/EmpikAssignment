@@ -14,9 +14,9 @@ public class UserCallCounterAdapter implements UserCallCounterPort {
     private final UserRepository userRepository;
 
     @Override
-    public void update(User user) {
-        int currentRequestCount = userRepository.getRequestCount(user.login());
+    public void update(String login) {
+        int currentRequestCount = userRepository.getRequestCount(login);
         int updatedCount = currentRequestCount + 1;
-        userRepository.updateRequestCount(user.login(), updatedCount);
+        userRepository.updateRequestCount(login, updatedCount);
     }
 }

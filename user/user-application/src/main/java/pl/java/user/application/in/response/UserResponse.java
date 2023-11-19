@@ -2,6 +2,8 @@ package pl.java.user.application.in.response;
 
 import lombok.Builder;
 
+import java.time.LocalDateTime;
+
 @Builder
 public record UserResponse(
         long id,
@@ -9,7 +11,7 @@ public record UserResponse(
         String name,
         String type,
         String avatarUrl,
-        String createdAt,
+        LocalDateTime createdAt,
         double calculations
 ) {
 }
