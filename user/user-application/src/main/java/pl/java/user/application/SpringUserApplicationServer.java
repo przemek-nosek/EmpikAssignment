@@ -22,9 +22,6 @@ class SpringUserApplicationServer {
         SpringApplication.run(SpringUserApplicationServer.class, args);
     }
 }
-//todo: logger
 //todo: create database if not exists!!
 //todo: docker-compose
 //todo: service test
-//todo: testcontainers/integration
-//todo: how to test external api calls

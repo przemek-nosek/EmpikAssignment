@@ -4,5 +4,5 @@ import pl.java.user.domain.model.User;
 
 public interface UserCallCounterPort {
 
-    void update(User user);
+    void update(String login);
 }

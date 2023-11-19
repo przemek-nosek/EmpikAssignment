@@ -5,10 +5,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.java.user.domain.model.User;
 import pl.java.user.domain.repository.UserRepository;
-
-import java.time.LocalDateTime;
 
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -16,6 +13,8 @@ import static org.mockito.BDDMockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class UserCallCounterAdapterTest {
+
+    private static final String LOGIN = "login";
 
     @Mock
     private UserRepository userRepository;
@@ -29,22 +28,10 @@ class UserCallCounterAdapterTest {
         willDoNothing().given(userRepository).updateRequestCount(anyString(), anyInt());
 
         //when
-        userCallCounterAdapter.update(buildUser());
+        userCallCounterAdapter.update(LOGIN);
 
         //then
         then(userRepository).should().getRequestCount(anyString());
         then(userRepository).should().updateRequestCount(anyString(), anyInt());
-    }
-
-    private User buildUser() {
-        return User.builder()
-                .id(123)
-                .name("name")
-                .login("login")
-                .avatarUrl("avatarUrl")
-                .calculations(15)
-                .createdAt(LocalDateTime.now())
-                .type("type")
-                .build();
     }
 }
