@@ -4,19 +4,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import pl.java.user.application.out.client.feign.exception.FeignBadRequestException;
 import pl.java.user.application.out.client.feign.exception.FeignNotFoundException;
 import pl.java.user.application.out.exception.message.ErrorMessage;
+import pl.java.user.domain.exception.ExternalApiFieldValidationException;
+import pl.java.user.domain.exception.ExternalApiReturnNullException;
 import pl.java.user.domain.exception.ZeroFollowersException;
 
 import java.time.LocalDateTime;
 
 import static org.springframework.http.HttpStatus.*;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
 
 @RestControllerAdvice
-class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+class GlobalExceptionHandler {
 
     @ExceptionHandler(FeignBadRequestException.class)
     ResponseEntity<ErrorMessage> handleFeignBadRequestException(FeignBadRequestException ex) {
@@ -28,8 +28,8 @@ class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(getErrorMessage(NOT_FOUND, ex.getMessage()), NOT_FOUND);
     }
 
-    @ExceptionHandler(ZeroFollowersException.class)
-    ResponseEntity<ErrorMessage> handleZeroFollowersException(ZeroFollowersException ex) {
+    @ExceptionHandler({ZeroFollowersException.class, ExternalApiFieldValidationException.class, ExternalApiReturnNullException.class})
+    ResponseEntity<ErrorMessage> handleUnprocessableEntityException(RuntimeException ex) {
         return new ResponseEntity<>(getErrorMessage(UNPROCESSABLE_ENTITY, ex.getMessage()), UNPROCESSABLE_ENTITY);
     }
 
