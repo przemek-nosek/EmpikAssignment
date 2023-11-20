@@ -8,6 +8,8 @@ import pl.java.shared.out.client.AbstractClient;
 import pl.java.shared.out.client.response.GithubUserResponse;
 import pl.java.user.application.in.response.UserResponse;
 import pl.java.user.application.out.client.feign.exception.FeignNotFoundException;
+import pl.java.user.domain.exception.ExternalApiFieldValidationException;
+import pl.java.user.domain.exception.ExternalApiReturnNullException;
 import pl.java.user.domain.exception.ZeroFollowersException;
 
 import java.time.LocalDateTime;
@@ -34,7 +36,7 @@ class UserControllerIntegrationTest extends PostgreSQLContainerSetUp {
     void getUser_shouldReturnUserResponse_whenUserWasFoundAndHisFollowerCountIsGreaterThanZero() throws Exception {
         //given
         int followersCount = 2;
-        given(abstractClient.getUserDetails(anyString())).willReturn(buildGithubUserResponse(followersCount));
+        given(abstractClient.getUserDetails(anyString())).willReturn(buildGithubUserResponse(LOGIN, followersCount));
 
         //when
         MvcResult mvcResult = mockMvc.perform(get(LOGIN_URL, LOGIN)
@@ -57,8 +59,8 @@ class UserControllerIntegrationTest extends PostgreSQLContainerSetUp {
     void getUser_shouldThrowZeroFollowersException_whenUserWasFoundAndHisFollowerCountIsZero() throws Exception {
         //given
         int followersCount = 0;
-        String expectedMessage = "User's login follower count is zero therefore can not divide.";
-        given(abstractClient.getUserDetails(anyString())).willReturn(buildGithubUserResponse(followersCount));
+        String expectedMessage = String.format("User's %s follower count is zero therefore can not divide.", LOGIN);
+        given(abstractClient.getUserDetails(anyString())).willReturn(buildGithubUserResponse(LOGIN, followersCount));
 
         //when
         //then
@@ -90,6 +92,42 @@ class UserControllerIntegrationTest extends PostgreSQLContainerSetUp {
         then(abstractClient).should().getUserDetails(anyString());
     }
 
+    @Test
+    void getUser_shouldThrowExternalApiReturnNullException_whenResponseWasNull() throws Exception {
+        //given
+        String expectedMessage = String.format("User %s returned by API was null, can not process.", LOGIN);
+        given(abstractClient.getUserDetails(anyString())).willReturn(null);
+
+        //when
+        //then
+        mockMvc.perform(get(LOGIN_URL, LOGIN)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity())
+                .andExpect(result -> assertThat(result.getResolvedException()).isInstanceOf(ExternalApiReturnNullException.class))
+                .andExpect(result -> assertThat(result.getResolvedException()).hasMessage(expectedMessage));
+
+        then(abstractClient).should().getUserDetails(anyString());
+    }
+
+    @Test
+    void getUser_shouldThrowExternalApiFieldValidationException_whenLoginWasNull() throws Exception {
+        //given
+        String expectedMessage = String.format("Parameter: %s can not have value: %s", "login", "null");
+        given(abstractClient.getUserDetails(anyString())).willReturn(buildGithubUserResponse(null, 20));
+
+        //when
+        //then
+        mockMvc.perform(get(LOGIN_URL, LOGIN)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity())
+                .andExpect(result -> assertThat(result.getResolvedException()).isInstanceOf(ExternalApiFieldValidationException.class))
+                .andExpect(result -> assertThat(result.getResolvedException()).hasMessage(expectedMessage));
+
+        then(abstractClient).should().getUserDetails(anyString());
+    }
+
     private UserResponse buildExpectedResponse() {
         return UserResponse.builder()
                 .id(123)
@@ -102,11 +140,11 @@ class UserControllerIntegrationTest extends PostgreSQLContainerSetUp {
                 .build();
     }
 
-    private GithubUserResponse buildGithubUserResponse(int followersCount) {
+    private GithubUserResponse buildGithubUserResponse(String login, int followersCount) {
         return GithubUserResponse.builder()
                 .id(123)
                 .name("name")
-                .login(LOGIN)
+                .login(login)
                 .followers(followersCount)
                 .publicRepos(6)
                 .type("type")

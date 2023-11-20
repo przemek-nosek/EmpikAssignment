@@ -22,6 +22,6 @@ class SpringUserApplicationServer {
         SpringApplication.run(SpringUserApplicationServer.class, args);
     }
 }
-//todo: create database if not exists!!
+//todo: validationResult
 //todo: docker-compose
 //todo: service test
