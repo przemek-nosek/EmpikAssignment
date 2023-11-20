@@ -22,7 +22,7 @@ The application is developed using the following technological stack and archite
 
 To run the application, follow these steps:
 
-1. Clone this repository to your local machine: `git clone [https://github.com/username/repository.git](https://github.com/przemek-nosek/EmpikAssignment.git)`
+1. Clone this repository to your local machine: `git clone https://github.com/przemek-nosek/EmpikAssignment.git`
 2. Navigate to the project directory: `cd EmpikAssignment`
 3. Create postgres database named: `user-service`
 4. Run the application: `mvn spring-boot:run`
